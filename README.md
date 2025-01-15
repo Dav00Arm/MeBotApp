@@ -1,6 +1,6 @@
 # MeBot - My AI Clone Chatbot
 
-Welcome to **MeBot**, an AI chatbot designed to act as a digital "clone" of its creator, **Davit Tumanyan**. Users can ask MeBot questions, have conversations, and learn a lot of information about Davit's background, interests, and expertise.
+Welcome to **MeBot**, an AI chatbot designed to act as my digital "clone." Users can ask MeBot questions, have conversations, and learn a lot of information about my background, interests, and expertise.
 
 ---
 
@@ -26,7 +26,7 @@ Welcome to **MeBot**, an AI chatbot designed to act as a digital "clone" of its 
 
 ## Features
 
-- **MeBot**: Engages in conversations as Davit Tumanyan.
+- **MeBot**: Engages in conversations as my digital representation.
 - **FastAPI Integration**: Lightning-fast API responses.
 - **Dockerized Setup**: Seamless containerization with Docker.
 - **Simple to Run**: Just run the `.bat` file—no additional setup required.
@@ -107,5 +107,5 @@ Thank you for using **MeBot**! Feel free to reach out if you have any questions 
 
 ---
 
-**Contact:** [davtumanyan03@gmail.com](mailto\:davtumanyan03@gmail.com) or open an issue on the repository.
+**Contact:** [davtumanyan03@gmail.com](mailto:davtumanyan03@gmail.com) or open an issue on the repository.
 

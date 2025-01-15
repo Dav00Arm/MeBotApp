@@ -1,0 +1,317 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+
+/* General Styles */
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 100vh; /* Full height of the viewport */
+    background: -moz-linear-gradient(
+        -45deg,
+        #183850 0,
+        #183850 25%,
+        #192c46 50%,
+        #22254c 75%,
+        #22254c 100%
+    );
+    background: -webkit-linear-gradient(
+        -45deg,
+        #183850 0,
+        #183850 25%,
+        #192c46 50%,
+        #22254c 75%,
+        #22254c 100%
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    max-height: 100%; /* Ensures no overflow */
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden;
+
+    box-sizing: border-box; /* Include padding/border in size calculations */
+}
+/* Chat Thread */
+.chat-thread {
+    flex: 1; /* Fills the available space */
+    padding: 10px;
+    list-style: none;
+    overflow-y: auto; /* Ensures scrollability for long messages */
+    overflow-x: hidden;
+    border-right: 2px solid rgba(25, 147, 147, 0.4); /* Adds a border to the right */
+    box-sizing: border-box;
+}
+.chat-thread li {
+    position: relative;
+    clear: both;
+    display: inline-block;
+    padding: 16px 40px 16px 20px;
+    margin: 0 0 20px 0;
+    font: 16px/20px "Noto Sans", sans-serif;
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+    word-wrap: break-word; /* Break long words to wrap to the next line */
+    word-break: break-word; /* Ensure wrapping of extremely long words */
+    overflow-wrap: break-word; /* Modern equivalent for breaking long words */
+    max-width: 100%; /* Ensure the message doesn't exceed the chat boundaries */
+    box-sizing: border-box; /* Include padding in size calculations */
+}
+
+/* Avatar */
+.chat-thread li:before {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    content: "";
+}
+
+/* Speech Bubble Arrow */
+.chat-thread li:after {
+    position: absolute;
+    top: 15px;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 15px solid rgba(25, 147, 147, 0.2);
+}
+
+.chat-thread li:nth-child(odd) {
+    animation: show-chat-odd 0.15s 1 ease-in;
+    -moz-animation: show-chat-odd 0.15s 1 ease-in;
+    -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+    float: right;
+    margin-right: 80px;
+    color: #0ad5c1;
+}
+
+.chat-thread li:nth-child(odd):before {
+    right: -80px;
+    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QBoRXhpZgAATU0...);
+}
+
+.chat-thread li:nth-child(odd):after {
+    border-right: 15px solid transparent;
+    right: -15px;
+}
+
+.chat-thread li:nth-child(even) {
+    animation: show-chat-even 0.15s 1 ease-in;
+    -moz-animation: show-chat-even 0.15s 1 ease-in;
+    -webkit-animation: show-chat-even 0.15s 1 ease-in;
+    float: left;
+    margin-left: 80px;
+    color: #0ec879;
+}
+
+.chat-thread li:nth-child(even):before {
+    left: -80px;
+    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QBoRXhpZgAATU0...);
+}
+
+.chat-thread li:nth-child(even):after {
+    border-left: 15px solid transparent;
+    left: -15px;
+}
+
+.chat-window {
+    height: 60px; /* Height of the input area */
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.chat-window-message {
+    width: 100%;
+    height: 48px;
+    font: 16px "Noto Sans", sans-serif;
+    padding: 5px 10px;
+    background: none;
+    color: #0ad5c1;
+    border: none; /* Removes all borders */
+    border-bottom: 2px solid rgba(25, 147, 147, 0.4); /* Adds only bottom border */
+    outline: none;
+    box-sizing: border-box;
+}
+.right-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    right: 10%; /* Keep it on the right side */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    display: flex;
+    gap: 2vw; /* Responsive spacing between the boxes */
+}
+
+.box {
+    width: clamp(80px, 10vw, 120px); /* Responsive width: min 80px, max 120px */
+    height: clamp(80px, 10vw, 120px); /* Responsive height: min 80px, max 120px */
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* Arrange icon and text vertically */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1rem; /* Responsive font size */
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+    color: #183850;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.box i {
+    font-size: clamp(16px, 2vw, 24px); /* Icon scales proportionally */
+    color: #183850;
+    margin-bottom: 8px; /* Space between the icon and text */
+}
+
+.box:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add sharper shadow on hover */
+    cursor: pointer;
+}
+
+.box span {
+    color: #183850;
+    font-size: clamp(12px, 1.5vw, 16px); /* Responsive font size for text */
+}
+.box a {
+    text-decoration: none;
+    color: #183850; /* Same color as the box */
+}
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(25, 147, 147, 0.9); /* Background for the user info */
+    border-bottom: 1px solid rgba(25, 147, 147, 0.4); /* Separator from chat thread */
+}
+
+.chat-user-img {
+    width: 65px; /* Display size */
+    height: 65px;
+    border-radius: 50%; /* Makes the image round */
+    margin-right: 10px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image fits nicely */
+    image-rendering: auto; /* Ensures smooth scaling */
+    image-rendering: -moz-crisp-edges; /* For older Firefox */
+    image-rendering: -webkit-optimize-contrast; /* For older WebKit browsers */
+    image-rendering: crisp-edges; /* For modern browsers */
+}
+
+.chat-user-name {
+    font-size: 18px;
+    font-family: "Noto Sans", sans-serif;
+    color: #183850;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media all and (max-width: 767px) {
+    .chat-thread {
+        width: 90%;
+        height: 260px;
+    }
+
+    .chat-window {
+        left: 5%;
+        width: 90%;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .chat-thread {
+        width: 50%;
+        height: 320px;
+    }
+
+    .chat-window {
+        left: 25%;
+        width: 50%;
+    }
+}
+
+/* Animations */
+@keyframes show-chat-even {
+    0% {
+        margin-left: -480px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@-moz-keyframes show-chat-even {
+    0% {
+        margin-left: -480px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@-webkit-keyframes show-chat-even {
+    0% {
+        margin-left: -480px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@keyframes show-chat-odd {
+    0% {
+        margin-right: -480px;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+
+@-moz-keyframes show-chat-odd {
+    0% {
+        margin-right: -480px;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+
+@-webkit-keyframes show-chat-odd {
+    0% {
+        margin-right: -480px;
+    }
+    100% {
+        margin-right: 0;
+    }
+}

@@ -49,7 +49,7 @@ Before running MeBot, ensure you have the following installed:
 
 ```bash
 git clone https://github.com/dav00arm/MeBotApp.git
-cd mebot
+cd MeBotApp
 ```
 
 ---

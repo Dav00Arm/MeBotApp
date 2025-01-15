@@ -45,28 +45,32 @@ Before running MeBot, ensure you have the following installed:
 
 ## Installation Instructions
 
-### 1. Clone the Repository
+There are two ways to run MeBot:
 
-```bash
-git clone https://github.com/dav00arm/MeBotApp.git
-cd MeBotApp
-```
+### Option 1: Download and Run the `.bat` File
 
----
+1. Download the [`MeBotApp.bat`](https://github.com/dav00arm/MeBotApp/releases/download/latest/MeBotApp.bat) file from the repository.
+2. Ensure that **Docker Desktop** is installed and running.
+3. Double-click the `MeBot.bat` file.
 
-## Running the Application
+This will automatically:
+- Pull the Docker image (if not already pulled)
+- Start the Docker container
+- Open the FastAPI interface in your default web browser.
 
-### Launch the Application (Windows)
+### Option 2: Clone the Repository and Run Manually
 
-1. Double-click the `MeBot.bat` file in your project directory.
-2. The `.bat` file will automatically:
-   - Pull the Docker image (if not already pulled)
-   - Start the Docker container
-   - Open the FastAPI interface in your default web browser.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dav00arm/MeBotApp.git
+   cd MeBotApp
+   ```
+2. Run the application using Uvicorn:
+   ```bash
+   uvicorn api:app --reload
+   ```
 
-### Note:
-
-Once the `.bat` file runs, the web page will open automatically. You don’t need to open the URL manually.
+This method runs the FastAPI application directly without Docker.
 
 ---
 

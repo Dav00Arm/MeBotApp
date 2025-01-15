@@ -49,7 +49,7 @@ There are two ways to run MeBot:
 
 ### Option 1: Download and Run the `.bat` File
 
-1. Download the [`MeBotApp.bat`](https://github.com/dav00arm/MeBotApp/releases/download/latest/MeBotApp.bat) file from the repository.
+1. Download the [`MeBotApp.bat`](https://github.com/dav00arm/MeBotApp/releases/download/latest/MeBotApp.bat) file (just right click and "save as").
 2. Ensure that **Docker Desktop** is installed and running.
 3. Double-click the `MeBot.bat` file.
 

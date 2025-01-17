@@ -66,7 +66,7 @@ This will automatically:
 
 When you run the `.bat` file, you will be prompted to enter your OpenAI API key. Make sure to enter the correct key to avoid errors. 
 
-# Tip
+### Tip
 If you already have set your OPENAI_API_KEY environment variable, just press enter. 
 
 ---

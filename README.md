@@ -60,6 +60,16 @@ This will automatically:
 - Start the Docker container
 - Open the FastAPI interface in your default web browser.
 
+---
+
+## Environment Variables
+
+When you run the `.bat` file, you will be prompted to enter your OpenAI API key. Make sure to enter the correct key to avoid errors. 
+
+# Tip
+If you already have set your OPENAI_API_KEY environment variable, just press enter. 
+
+---
 ### Option 2: Clone the Repository and Run Manually
 
 1. Clone the repository:
@@ -77,12 +87,6 @@ This will automatically:
    ```
 
 This method runs the FastAPI application directly without Docker.
-
----
-
-## Environment Variables
-
-When you run the `.bat` file, you will be prompted to enter your OpenAI API key. Make sure to enter the correct key to avoid errors.
 
 ---
 

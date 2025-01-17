@@ -1,5 +1,5 @@
 # MeBot - My AI Clone Chatbot
-![Demonstration image](assets/MeBot_Logo.png)
+![MeBot Logo](assets/MeBot_Logo.png)
 Welcome to **MeBot**, an AI chatbot designed to act as my digital "clone." Users can ask MeBot questions, have conversations, and learn a lot of information about my background, interests, and expertise.
 ![Demonstration image](asstes/demonstration_image.png)
 

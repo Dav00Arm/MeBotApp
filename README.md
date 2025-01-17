@@ -67,7 +67,11 @@ This will automatically:
    git clone https://github.com/dav00arm/MeBotApp.git
    cd MeBotApp
    ```
-2. Run the application using Uvicorn:
+2. Install the dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Run the application using Uvicorn:
    ```bash
    uvicorn api:app --reload
    ```
